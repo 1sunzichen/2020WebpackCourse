@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "13580635",
+      "name": "埃及-金字塔",
+      "font_class": "aiji-jinzita",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "13580636",
+      "name": "澳大利亚-悉尼歌剧院",
+      "font_class": "aodaliya-xinigejuyuan",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "13580646",
+      "name": "威尼斯",
+      "font_class": "weinisi",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "13580647",
+      "name": "日本-富士山",
+      "font_class": "riben-fushishan",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "13580648",
+      "name": "新加坡-金沙酒店",
+      "font_class": "xinjiapo-jinshajiudian",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    }
+  ]
+}
