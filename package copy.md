@@ -29,6 +29,7 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
+  // css兼容
   "browserslist": {
     "development": [
       "last 1 chrome version",
@@ -41,6 +42,7 @@
       "not op_mini all"
     ]
   },
+  //js 检查
   "eslintConfig": {
     "extends": "airbnb-base"
   }
