@@ -6,6 +6,22 @@ const OptimizeCSSPlugin=require('optimize-css-assets-webpack-plugin');
 //
 const HtmlWebpackPlugin=require('html-webpack-plugin');
 //定义nodejs 环境变量
+/* 
+  modify
+    缓存:
+    babel缓存
+      cacheDirectory:true
+    文件资源缓存
+      hash: 每次webpack构建会生成一个唯一的hash值
+            文件是js和css同时使用一个hash值 
+            重新打包 会导致所有缓存失效 （我却只改动一个文件）
+      chunkhash   根据chunk生成的hash值 如果打包来源于同一个chunkhash
+                  那么hash只就一样
+                  问题：js 和 css 值 还是一样的
+                  因为 css 实在一个js 中被引入的
+      contenthash 根据文件的内容生成 hash 不同文件的hash值一定不一样 
+                   =》上线代码运行缓存更好使用
+ */
 process.env.NODE_ENV="production"
 //复用cssloader
 const commonCssLoader = [
@@ -26,7 +42,7 @@ module.exports={
   entry:'./src/js/index.js',
   output:{
                       //modify
-    filename:'js/build.[hash:10].js',
+    filename:'js/build.[contenthash:10].js',
     path:resolve(__dirname,'build')
   }, 
   module:{
@@ -42,7 +58,7 @@ module.exports={
         }
       },
       {
-        //modify：oneOf 中的文件只匹配一种loader
+ 
         oneOf: [
             {
               test: /\.(css|less)$/,
@@ -53,9 +69,7 @@ module.exports={
                 'less-loader'
               ]
             },
-      //正常来讲 一个文件只能被一个 loader 处理 
-      //        一个文件要被多个loader处指定loader执行的前后顺序
-      //先执行eslint 在执行babel           
+        
       
           {
             test: /\.js$/,
@@ -112,7 +126,7 @@ module.exports={
   plugins:[
     new MiniCssExtractPlugin({
                           //modify
-      filename:'css/build.[hash:10].css'
+      filename:'css/build.[contenthash:10].css'
     }),
     new OptimizeCSSPlugin(),
     new HtmlWebpackPlugin({

@@ -11,7 +11,7 @@ function sum(...args) {
 // eslint-disable-next-line
 const promises =new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve('suc');
+    resolve('sucx');
   }, 1000);
 });
 console.log('====================================');
