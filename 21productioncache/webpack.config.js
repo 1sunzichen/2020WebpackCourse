@@ -23,9 +23,10 @@ const commonCssLoader = [
           },
 ]
 module.exports={
-  entry:'./src/index.js',
+  entry:'./src/js/index.js',
   output:{
-    filename:'js/build.js',
+                      //modify
+    filename:'js/build.[hash:10].js',
     path:resolve(__dirname,'build')
   }, 
   module:{
@@ -70,15 +71,16 @@ module.exports={
                     },
                     targets:{
                       chrome:60,
-                      firefox::50,
+                      firefox:50,
                     }
                   }
                 ],
 
               ],
+              //modify
               //开启babel 缓存
               //第二次构建读取缓存
-              catchDirectory:true
+              cacheDirectory:true
             }
           },
           {
@@ -108,8 +110,9 @@ module.exports={
     ]
   },
   plugins:[
-    new MiniCssExtractPlugin（{
-      filename:'css/build.css'
+    new MiniCssExtractPlugin({
+                          //modify
+      filename:'css/build.[hash:10].css'
     }),
     new OptimizeCSSPlugin(),
     new HtmlWebpackPlugin({
@@ -123,5 +126,5 @@ module.exports={
     })
   ],
   mode:'production',
-  devtool:'nosources-source-map'
+  devtool:'source-map'
 }
