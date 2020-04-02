@@ -23,7 +23,7 @@ const commonCssLoader = [
           },
 ]
 module.exports={
-  entry:'./src/index.js',
+  entry:'./src/js/index.js',
   output:{
     filename:'js/build.js',
     path:resolve(__dirname,'build')
@@ -47,7 +47,7 @@ module.exports={
               test: /\.(css|less)$/,
               use:[
                 // 'style-loader',
-                ...commonCssLoader
+                ...commonCssLoader,
                 // less兼容性做不了
                 'less-loader'
               ]
@@ -70,7 +70,7 @@ module.exports={
                     },
                     targets:{
                       chrome:60,
-                      firefox::50,
+                      firefox:50,
                     }
                   }
                 ],
@@ -105,7 +105,7 @@ module.exports={
     ]
   },
   plugins:[
-    new MiniCssExtractPlugin（{
+    new MiniCssExtractPlugin({
       filename:'css/build.css'
     }),
     new OptimizeCSSPlugin(),

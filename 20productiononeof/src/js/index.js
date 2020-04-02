@@ -1,14 +1,14 @@
-//import '@babel/polyfill';
+// import '@babel/polyfill';
 const add = function add(x, y) {
   return x + y;
 };
 
-
-const promises =new Promise((resolve, reject) => {
+// eslint-disable-next-line
+const promises = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve("suc")
+    resolve('suc');
   }, 1000);
-})
+});
 console.log('====================================');
-console.log(add(2, 5),promises);
+console.log(add(2, 5), promises);
 console.log('====================================');

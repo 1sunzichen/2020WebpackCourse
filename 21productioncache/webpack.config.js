@@ -47,7 +47,7 @@ module.exports={
               test: /\.(css|less)$/,
               use:[
                 // 'style-loader',
-                ...commonCssLoader
+                ...commonCssLoader,
                 // less兼容性做不了
                 'less-loader'
               ]
@@ -75,7 +75,10 @@ module.exports={
                   }
                 ],
 
-              ]
+              ],
+              //开启babel 缓存
+              //第二次构建读取缓存
+              catchDirectory:true
             }
           },
           {
@@ -119,5 +122,6 @@ module.exports={
       }
     })
   ],
-  mode:'production'
+  mode:'production',
+  devtool:'nosources-source-map'
 }
