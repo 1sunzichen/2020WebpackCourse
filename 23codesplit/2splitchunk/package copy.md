@@ -45,10 +45,8 @@
     "extends": "airbnb-base"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "request": "^2.88.2"
+    "express": "^4.17.1"
   },
-  "sideEffects": [
-    "*.css"
-  ]
+  
+ ## "sideEffects": true
 }
