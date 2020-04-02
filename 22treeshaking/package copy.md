@@ -47,7 +47,6 @@
   "dependencies": {
     "express": "^4.17.1"
   },
-  "sideEffects": [
-    "*.css"
-  ]
+  
+ ## "sideEffects": true
 }
