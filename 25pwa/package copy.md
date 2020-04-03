@@ -44,9 +44,9 @@
   },
   "eslintConfig": {
     "extends": "airbnb-base",
-    "env": {
-      "browser": "true"
-    }
+   ## "env": {
+   ##   "browser": "true"
+   ## }
   },
   "dependencies": {
     "express": "^4.17.1",
