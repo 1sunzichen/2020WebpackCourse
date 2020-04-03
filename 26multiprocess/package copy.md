@@ -24,7 +24,6 @@
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "style-loader": "^1.1.3",
-    "thread-loader": "^2.1.3",
     "url-loader": "^4.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
@@ -45,13 +44,12 @@
   },
   "eslintConfig": {
     "extends": "airbnb-base",
-    "env": {
-      "browser": "true"
-    }
+   ## "env": {
+   ##   "browser": "true"
+   ## }
   },
   "dependencies": {
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
     "request": "^2.88.2"
   },
   "sideEffects": [
